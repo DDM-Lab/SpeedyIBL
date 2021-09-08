@@ -55,8 +55,8 @@ The basic structure of our commands is the following:
 python run_navigation.py --environment NAVIGATION_V1 --type <library_name>
 ```
 where `<library_name>` is the type of library used to run the task. Specifically `<library_name>` can be replaced with:
-* `ibl` to run IBL agents with SpeedyIBL
-* `pyibl` to run IBL agents with [PyIBL](http://pyibl.ddmlab.com/) (v.4.1.2)
+* `libl` to run IBL agents with SpeedyIBL
+* `ibl` to run IBL agents with [PyIBL](http://pyibl.ddmlab.com/) (v.4.1.2)
 
 The other experiment parameters can be configured by changing the values in `run_navigation.py` file.
 
