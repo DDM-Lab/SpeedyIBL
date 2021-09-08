@@ -3,7 +3,7 @@ from itertools import count
 
 import random as random
 from pyibl import Agent
-from lightweightIBL import IBL  
+from IBL import IBL  
 from collections import deque
 
 class AgentlightweightIBL(IBL):
