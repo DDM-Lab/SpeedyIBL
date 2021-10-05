@@ -68,6 +68,27 @@ Running time (left) and average reward (rights) of SpeedyIBL and PyIBL on Cooper
     <img src="./images/navigation_reward.png" width=290></img>
 </p>
 
+## Insider Attack Game
+In this game, players take the role of the attacker and their goal is to score points by “hacking” computers to steal proprietary data, illustrated in the figure below. The game is chosen to illustrate using of the partial matching process. 
+
+<p align="center">
+<img src="./images/insider.png" >
+</p>
+
+### Running the task:
+The basic structure of our commands is the following:
+```
+python insider_attack_speedyIBL.py
+```
+
+### Results:
+Running time (left) and average reward (rights) of SpeedyIBL and PyIBL on Insider Attack Game.
+
+<p align="center">
+    <img src="./images/insider_time.png" width=300></img>
+    <img src="./images/insider_reward.png" width=290></img>
+</p>
+
 
 ## References
 <b id="f1">[1]</b> Cleotilde Gonzalez, Javier F. Lerch and Christian Lebiere (2003), [Instance-based learning in dynamic decision making](https://www.sciencedirect.com/science/article/abs/pii/S0364021303000314), Cognitive Science, 27, 591-635. DOI: 10.1016/S0364-0213(03)00031-4.
