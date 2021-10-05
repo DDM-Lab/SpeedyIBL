@@ -12,21 +12,30 @@ class IBL(object):
 	mkid = next(count())
 
 	# """ Agent """
-	def __init__(self, default_utility = 0.1, noise = 0.25, decay = 0.5, lendeque = 25000):
-
+	def __init__(self, default_utility = 0.1, noise = 0.25, decay = 0.5, mismatchPenalty = None, lendeque = 250000):
+	
 		self.default_utility = default_utility
 		self.noise = noise
 		self.decay = decay
 		self.temperature = 0.25*math.sqrt(2)
+		self.mismatchPenalty = mismatchPenalty
 		self.lendeque = lendeque
 		self.id = IBL.mkid
 		self.instance_history = {}
 		self.t = 0
 
-	def respond(self, reward):
+		self.sim = {}
+		self.sim['att'] = []
+		self.sim['f'] = []
 
+		self.atts = []
+
+	def respond(self, reward):
+	
 		if self.option not in self.instance_history:
 			self.instance_history[self.option] = {reward:deque([],self.lendeque)}
+			if self.mismatchPenalty is not None:
+				self.atts.append(list(self.option))
 		elif reward not in self.instance_history[(self.option)]:
 			self.instance_history[self.option][reward] = deque([],self.lendeque)
 
@@ -50,19 +59,21 @@ class IBL(object):
 						tmp = np.copy(self.instance_history[o][r])
 						tmp = t - tmp
 						tmp = math.log(sum(pow(tmp,-self.decay))) + self.noise*self.make_noise()
+						if self.mismatchPenalty is not None:
+							tmp = tmp + self.get_similarity(o)
 						tmps.append(tmp)
 						rewards.append(r)
-				
-				tmp0 = math.log(pow(t,-self.decay)) + self.noise*self.make_noise()
-				tmps.append(tmp0)
+				if self.default_utility is not None:
+					tmp0 = math.log(pow(t,-self.decay)) + self.noise*self.make_noise()
+					tmps.append(tmp0)
+					rewards.append(self.default_utility)
 				tmps = np.array(tmps)
 				tmps = np.exp(tmps/self.temperature)
 				p = tmps/sum(tmps)
-				rewards.append(self.default_utility)
 				rewards = np.array(rewards)
 				result = sum(rewards*p)
 				blends.append((result,i))
-			else:
+			elif self.default_utility is not None:
 				blends.append((self.default_utility,i))
 		return blends 
 	def make_noise(self):
@@ -72,6 +83,7 @@ class IBL(object):
 	def choose(self, options):
 		self.t += 1
 		utilities = self.compute_blended(self.t, options)
+		# print(utilities)
 		best_utility = max(utilities,key=lambda x:x[0])[0]
 		best = random.choice(list(filter(lambda x: x[0]==best_utility,utilities)))[1]
 		self.option = options[best]
@@ -80,6 +92,36 @@ class IBL(object):
 	def reset(self):
 		self.t = 0
 		self.instance_history = {}
+		self.sim = {}
+		self.sim['att'] = []
+		self.sim['f'] = []
+
+		self.atts = []
 	
 	def instances(self):
 		print(tabulate([[a,b,list(self.instance_history[a][b])] for a in self.instance_history for b in self.instance_history[a]], headers=['option','outcome','occurences']))
+	
+	def prepopulate(self, option, reward):
+		if (option) not in self.instance_history:
+			self.instance_history[option] = {reward:deque([],self.lendeque)}
+		elif reward not in self.instance_history[option]:
+			self.instance_history[option][reward] = deque([],self.lendeque)
+		self.instance_history[option][reward].append(0)
+	
+	def similarity(self,attributes,function):
+		self.sim['att'].append(attributes)
+		self.sim['f'].append(function)
+	
+	def get_similarity(self,option):
+		result = 0
+		if len(self.atts)>0:
+			np_option = np.asarray(option)
+			np_atts =  np.asarray(self.atts)
+			for att, f in zip(self.sim['att'],self.sim['f']):
+				result += sum(sum(f(np_option[att].reshape(1,-1),np_atts[:,att])))
+			if option in self.instance_history:
+				result = result - 1
+		return result
+
+			
+
