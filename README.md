@@ -85,8 +85,8 @@ python insider_attack_speedyIBL.py
 Running time (left) and average reward (rights) of SpeedyIBL and PyIBL on Insider Attack Game.
 
 <p align="center">
-    <img src="./images/insider_time.png" width=300></img>
-    <img src="./images/insider_reward.png" width=290></img>
+    <img src="./images/insider-time.png" width=300></img>
+    <img src="./images/insider-reward.png" width=290></img>
 </p>
 
 
