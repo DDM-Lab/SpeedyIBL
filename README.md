@@ -74,7 +74,7 @@ Running time (left) and average reward (rights) of SpeedyIBL and PyIBL on Cooper
 In this game, players take the role of the attacker and their goal is to score points by “hacking” computers to steal proprietary data, illustrated in the figure below. The game is chosen to illustrate using of the partial matching process. 
 
 <p align="center">
-<img src="./images/insider.png" width = 300></img>
+<img src="./images/insider.png" width = 400></img>
 </p>
 
 ### Running the task:
