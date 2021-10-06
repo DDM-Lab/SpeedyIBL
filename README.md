@@ -5,6 +5,7 @@ A Python library to create single or multi Instance-based Learning (IBL) agents 
 
 * [Installation](#installation)
 * [Applications](#applications)
+* * [Cooperative Navigation Task](##Cooperative Navigation Task)
 
 Please use this bibtex if you want to cite this repository in your publications:
 ```
@@ -24,12 +25,12 @@ git clone https://github.com/nhatpd/SpeedyIBL.git
 
 2. Goto the main folder of the cloned git repository which contains the `requirements.txt` file
 
-3. (suggestion) Create a virtual Python Environment by running the following commands in your shell. (This may be different on your machine!  If it does not work, look at how to install a virtual python env based on your system.):
+3. (suggestion) Create a virtual Python Environment by running the following commands in your shell. (This may be different on your machine!  If it does not work, look at how to install a virtual python env_speedyIBL based on your system.):
 ```
-python3 -m venv env
+python3 -m venv env_speedyIBL
 ```
 ```
-source env/bin/activate
+source env_speedyIBL/bin/activate
 ```
 4. Install the required python libraries by running this command in your shell:
 ```
@@ -72,7 +73,7 @@ Running time (left) and average reward (rights) of SpeedyIBL and PyIBL on Cooper
 In this game, players take the role of the attacker and their goal is to score points by “hacking” computers to steal proprietary data, illustrated in the figure below. The game is chosen to illustrate using of the partial matching process. 
 
 <p align="center">
-<img src="./images/insider.png" >
+<img src="./images/insider.png" width = 300></img>
 </p>
 
 ### Running the task:
