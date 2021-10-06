@@ -6,6 +6,7 @@ A Python library to create single or multi Instance-based Learning (IBL) agents 
 * [Installation](#installation)
 * [Applications](#applications)
   * [Cooperative Navigation Task](#Cooperative-Navigation-Task)
+  * [Insider Attack Game](#Insider-Attack-Game)
 
 Please use this bibtex if you want to cite this repository in your publications:
 ```
