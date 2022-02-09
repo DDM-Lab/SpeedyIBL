@@ -1,3 +1,37 @@
+The folder is structured as following:
++ Folder **Codes** contains the source codes for reproducing all the experiments presented in the manuscript. In particular, please execute the following commands for the corresponding task: 
+	* Binary Choice Task
+		* Using SpeedyIBL: ```python3 binarychoice.py --method libl```
+		* Using PyIBL: ```python3 binarychoice.py --method ibl```
+
+	* Insider Attack Game:
+		* Using SpeedyIBL: ```python3 insider_attack_speedyIBL.py```
+		* Using PyIBL: ```python3 insider.py```
+
+	* Minimap:
+		* Using SpeedyIBL: ```python3 minimap.py --type libl```
+		* Using PyIBL: ```python3 minimap.py --type ibl```
+
+	* MisPacman:
+		* Using SpeedyIBL: ```python3 mispacman.py --type libl```
+		* Using PyIBL: ```python3 mispacman.py --type ibl```
+
+	* Navigation:
+		* Using SpeedyIBL: ```python3 navigation.py --type libl```
+		* Using PyIBL: ```python3 navigation.py --type ibl```
+
+	* Firemen Task:
+		* Using SpeedyIBL: ```python3 fireman.py --type libl```
+		* Using PyIBL: ```python3 fireman.py --type ibl```
+
+	Additionally, we provided the Jupyter notebook file ```speedyIBL.ipynb``` for running the aforementioned tasks using SpeedyIBL. The Jupyter notebook file can also be run in Google Colab environment at this [link](https://colab.research.google.com/github/nhatpd/SpeedyIBL/blob/main/speedyIBL.ipynb).
+
++ Folder **Data** contains all the experiment data of all the tasks, which was used for the data analysis presented in the manuscript.  
+
++ Folder **images** contains all the figures used in the manuscript. 
+
+---
+
 A Python library to create single or multi Instance-based Learning (IBL) agents that are built based on Instance Based Learning Theory (IBLT) <sup id="a1">[1](#f1)</sup>
 
 * [**Installation of speedy IBL**](#Installation-of-speedy-IBL)
