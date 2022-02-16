@@ -12,7 +12,7 @@ class Agent(object):
 	mkid = next(count())
 
 	# """ Agent """
-	def __init__(self, default_utility = 0.1, noise = 0.25, decay = 0.5, mismatchPenalty = None, lendeque = 250000, full_instance = True):
+	def __init__(self, default_utility = 0.1, noise = 0.25, decay = 0.5, mismatchPenalty = None, lendeque = 250000):
 	
 		self.default_utility = default_utility
 		self.noise = noise
@@ -30,33 +30,42 @@ class Agent(object):
 
 		self.atts = []
 		self.simvalues = {}
-		self.full_isntance = full_instance 
+		self.full_isntance = True 
 
 	def respond(self, reward):
 
 		if self.full_isntance and self.mismatchPenalty is not None:
-			if self.option[0] not in self.instance_history:
-				self.instance_history[self.option[0]] = {(reward,self.option[1]):deque([],self.lendeque)}
-			elif (reward,self.option[1]) not in self.instance_history[self.option[0]]:
-				self.instance_history[self.option[0]][(reward,self.option[1])] = deque([],self.lendeque)
+			if self.option[1] not in self.instance_history:
+				self.instance_history[self.option[1]] = {(reward,self.option[0]):deque([],self.lendeque)}
+			elif (reward,self.option[0]) not in self.instance_history[self.option[1]]:
+				self.instance_history[self.option[1]][(reward,self.option[0])] = deque([],self.lendeque)
 
-			self.instance_history[self.option[0]][(reward,self.option[1])].append(self.t) 
+			self.instance_history[self.option[1]][(reward,self.option[0])].append(self.t) 
 		else:
 			if self.option not in self.instance_history:
 				self.instance_history[self.option] = {reward:deque([],self.lendeque)}
 				if self.mismatchPenalty is not None:
-					self.atts.append(list(self.option))
+					self.atts.append(list(self.option[0]))
 			elif reward not in self.instance_history[(self.option)]:
 				self.instance_history[self.option][reward] = deque([],self.lendeque)
 
 			self.instance_history[self.option][reward].append(self.t) 
 
 	def populate_at(self, option, reward, t):
-		if (option) not in self.instance_history:
-			self.instance_history[option] = {reward:deque([],self.lendeque)}
-		elif reward not in self.instance_history[option]:
-			self.instance_history[option][reward] = deque([],self.lendeque)
-		self.instance_history[option][reward].append(t)
+		if self.full_isntance and self.mismatchPenalty is not None:
+			if option[1] not in self.instance_history:
+				self.instance_history[option[1]] = {(reward,option[0]):deque([],self.lendeque)}
+			elif (reward,option[0]) not in self.instance_history[option[1]]:
+				self.instance_history[option[1]][(reward, option[0])] = deque([],self.lendeque)
+			self.instance_history[option[1]][(reward, option[0])].append(t)
+		else:
+			if (option) not in self.instance_history:
+				self.instance_history[option] = {reward:deque([],self.lendeque)}
+				if self.mismatchPenalty is not None:
+					self.atts.append(list(self.option[0]))
+			elif reward not in self.instance_history[option]:
+				self.instance_history[option][reward] = deque([],self.lendeque)
+			self.instance_history[option][reward].append(t)
 	
 	def compute_blended(self, t, options):
 		blends = []
@@ -144,14 +153,16 @@ class Agent(object):
 	
 	def prepopulate(self, option, reward):
 		if self.full_isntance and self.mismatchPenalty is not None:
-			if option[0] not in self.instance_history:
-				self.instance_history[option[0]] = {(reward,option[1]):deque([],self.lendeque)}
-			elif (reward,option[1]) not in self.instance_history[option[0]]:
-				self.instance_history[option[0]][(reward, option[1])] = deque([],self.lendeque)
-			self.instance_history[option[0]][(reward, option[1])].append(0)
+			if option[1] not in self.instance_history:
+				self.instance_history[option[1]] = {(reward,option[0]):deque([],self.lendeque)}
+			elif (reward,option[0]) not in self.instance_history[option[1]]:
+				self.instance_history[option[1]][(reward, option[0])] = deque([],self.lendeque)
+			self.instance_history[option[1]][(reward, option[0])].append(0)
 		else:
 			if (option) not in self.instance_history:
 				self.instance_history[option] = {reward:deque([],self.lendeque)}
+				if self.mismatchPenalty is not None:
+					self.atts.append(list(self.option[0]))
 			elif reward not in self.instance_history[option]:
 				self.instance_history[option][reward] = deque([],self.lendeque)
 			self.instance_history[option][reward].append(0)
@@ -160,7 +171,7 @@ class Agent(object):
 		self.sim['att'].append(attributes)
 		self.sim['f'].append(function)
 	
-	def get_similarity(self,option, option2):
+	def get_similarity(self,option, option2 = None):
 		result = 0
 		if self.full_isntance and self.mismatchPenalty is not None:
 			np_option = np.asarray(option)
@@ -175,7 +186,7 @@ class Agent(object):
 			self.simvalues[(option,option2)] = result
 			self.simvalues[(option2,option)] = result
 		elif len(self.atts)>0:
-			np_option = np.asarray(option)
+			np_option = np.asarray(option[0])
 			np_atts =  np.asarray(self.atts)
 			for att, f in zip(self.sim['att'],self.sim['f']):
 				result += sum(sum(f(np_option[att].reshape(1,-1),np_atts[:,att])))
