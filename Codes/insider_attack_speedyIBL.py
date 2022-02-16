@@ -123,18 +123,16 @@ def run(output_file=DEFAULT_OUTPUT_FILE, participants=DEFAULT_PARTICIPANTS):
                 # x = TARGETS[1][n]
                 x = TARGETS[1][n]
                 covered = n + 1 in TRAINING_COVERAGE[i]
-                selection_agent.prepopulate((i + 1,
-                                                (x["payment"],
+                selection_agent.prepopulate(((x["payment"],
                                                 x["penalty"],
-                                                x["monitored_probability"])),
+                                                x["monitored_probability"]), i+1),
                                                 x["penalty" if covered else "payment"])
                 attack_agent.prepopulate((True, n + 1 in TRAINING_SIGNALS[i]),x["penalty" if covered else "payment"])
                 if i == dup:
                     # x = TARGETS[1][5]
-                    selection_agent.prepopulate((6,
-                                                (x["payment"],
+                    selection_agent.prepopulate(((x["payment"],
                                                 x["penalty"],
-                                                x["monitored_probability"])),
+                                                x["monitored_probability"]), 6),
                                                 x["penalty" if covered else "payment"])
             attack_agent.prepopulate((False,False),0)
             attack_agent.prepopulate((False,True),0)
@@ -143,15 +141,14 @@ def run(output_file=DEFAULT_OUTPUT_FILE, participants=DEFAULT_PARTICIPANTS):
             # selection_agent.instances()
             
             for b in range(BLOCKS):
-                sds = [ (i + 1,
-                                        (x["payment"],
+                sds = [ ((x["payment"],
                                         x["penalty"],
-                                        x["monitored_probability"]))
+                                        x["monitored_probability"]), i+1)
                         for x, i in zip(TARGETS[b], range(TARGET_COUNT)) ]
 
                 for t in range(TRIALS):
                     start_time = time.time()
-                    selected = selection_agent.choose(sds)[0]
+                    selected = selection_agent.choose(sds)[1]
                     warned = selected in SIGNALS[b][t]
                     pmnt = TARGETS[b][selected - 1]["payment"]
                     attack = attack_agent.choose([(True, warned),
