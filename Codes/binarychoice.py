@@ -69,8 +69,6 @@ for t in range(FLAGS.trial):
             acc[t,i] = choice == "risky"
             time_run[t,i+1] = time_run[t,i] + end - start
 acc_df = pd.DataFrame(acc)
-acc_df.to_pickle('Results/binary/'+FLAGS.method+'acccase1.pkl')
+acc_df.to_pickle(FLAGS.method+'acccase1.pkl')
 time_df = pd.DataFrame(time_run)
-time_df.to_pickle('Results/binary/'+FLAGS.method+'timecase1.pkl')
-# reward_df = pd.DataFrame(reward)
-# reward_df.to_pickle('Results/binary/'+FLAGS.method+'rewardcase1.pkl')
+time_df.to_pickle(FLAGS.method+'timecase1.pkl')
