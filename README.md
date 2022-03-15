@@ -4,6 +4,16 @@
 
 In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial on how to install and use the SpeedyIBL library. Specifically, we explain how to build an IBL agent, and elaborate on the meaning of associated inputs and functions. Afterwards, we present worked examples on two illustrative tasks:  Binary Choice and Navigation. It is worth noting that all the codes to run all the tasks and to replicate the results presented in the paper are available at https://github.com/DDM-Lab/SpeedyIBL. Finally, for the reproducibility purpose, we give an example on how to reproduce all the reported results using PyIBL and SpeedyIBL. In addition, we provide a Jupyter notebook file of the turorial, see https://github.com/DDM-Lab/SpeedyIBL/blob/main/tutorial_speedyibl.ipynb, for running the aforementioned tasks using SpeedyIBL. We also can run this file on Google Colab https://colab.research.google.com/github/nhatpd/SpeedyIBL/blob/main/speedyIBL.ipynb without installing Python on personal computers. 
 
+
+* [**Installing SpeedyIBL**](#Installation-of-speedy-IBL)
+* [**Illustration of IBL for Binary Choice Task**](#Illustration-of-IBL-for-Binary-Choice-Task)
+* [**Illustration of IBL for Insider Attack Game**](#Illustration-of-IBL-for-Insider-Attack-Game)
+* [**Build an IBL Agent with an Equal Delay Feedback Mechanism**](#Build-an-IBL-Agent-with-an-Equal-Delay-Feedback-Mechanism)
+* [**Illustration of IBL for Cooperative Navigation**](#Illustration-of-IBL-for-Cooperative-Navigation)
+* [**Illustration of IBL for Minimap**](#Illustration-of-IBL-for-Minimap)
+* [**Illustration of IBL for Firemen Task**](#Illustration-of-IBL-for-Firemen-Task)
+* [**Illustration of IBL for Tasks from GymAI**](#Illustration-of-IBL-for-Tasks-from-GymAI)
+
 ## References
 <b id="f1">[1]</b> Cleotilde Gonzalez, Javier F. Lerch and Christian Lebiere (2003), [Instance-based learning in dynamic decision making](https://www.sciencedirect.com/science/article/abs/pii/S0364021303000314), Cognitive Science, 27, 591-635. DOI: 10.1016/S0364-0213(03)00031-4.
 
