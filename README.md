@@ -7,13 +7,12 @@ In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial o
 
 * [**Installing SpeedyIBL**](#Installing-SpeedyIBL)
 * [**Importing and describing the class Agent of SpeedyIBL**](#Importing-and-describing-the-class-Agent-of-SpeedyIBL)
-* [**Using SpeedyIBL for binary choice task**](#Illustration-of-IBL-for-Binary-Choice-Task)
-* [**Illustration of IBL for Insider Attack Game**](#Illustration-of-IBL-for-Insider-Attack-Game)
-* [**Build an IBL Agent with an Equal Delay Feedback Mechanism**](#Build-an-IBL-Agent-with-an-Equal-Delay-Feedback-Mechanism)
-* [**Illustration of IBL for Cooperative Navigation**](#Illustration-of-IBL-for-Cooperative-Navigation)
-* [**Illustration of IBL for Minimap**](#Illustration-of-IBL-for-Minimap)
-* [**Illustration of IBL for Firemen Task**](#Illustration-of-IBL-for-Firemen-Task)
-* [**Illustration of IBL for Tasks from GymAI**](#Illustration-of-IBL-for-Tasks-from-GymAI)
+* [**Using SpeedyIBL for binary choice task**](#Using-SpeedyIBL-for-binary-choice-task)
+* [**Using SpeedyIBL for Cooperative Navigation task**](#Using-SpeedyIBL-for-Cooperative-Navigation-task)
+* [**Using SpeedyIBL for Insider Attack Game**](#Using SpeedyIBL-for-Insider-Attack-Game)
+* [**Using SpeedyIBL for Minimap**](#Using-SpeedyIBL-for-Minimap)
+* [**SpeedyIBL for for Tasks from GymAI**](#SpeedyIBL-for-for-Tasks-from-GymAI)
+* [**Reproducing Results**](#Reproducing-Results)
 
 ## References
 <b id="f1">[1]</b> Cleotilde Gonzalez, Javier F. Lerch and Christian Lebiere (2003), [Instance-based learning in dynamic decision making](https://www.sciencedirect.com/science/article/abs/pii/S0364021303000314), Cognitive Science, 27, 591-635. DOI: 10.1016/S0364-0213(03)00031-4.
@@ -171,12 +170,18 @@ plt.show()
 ```
 
 
-![png](output_21_0.png)
+![png](./images/output_21_0.png)
 
 
 We also would like to note that the codes of both SpeedyIBL and PyIBL for generating the results of the binary choice task in the paper are available at https://github.com/DDM-Lab/SpeedyIBL/blob/main/Codes/binarychoice.py. To plot the results, please see https://github.com/DDM-Lab/SpeedyIBL/blob/main/Codes/plot_results.ipynb. 
 
-#Using SpeedyIBL for Cooperative Navigation task
+# Using SpeedyIBL for Cooperative Navigation task
+
+In this task, three agents must cooperate through physical actions to reach a set of three landmarks (3 green landmarks). The agents can observe the relative positions of other agents and landmarks, and are collectively rewarded based on the number of the landmarks that they cover. For instance, if all the agents cover only one landmark, they receive one point. By contrast, if they all can cover the three landmarks, they got the maximum of three points. Simply put, the agents want to cover all of the landmarks, so they need to learn to coordinate the landmark they must cover.
+
+<p align="center">
+<img src="./images/navigation.gif" >
+</p>
 
 First, let us build an environment class of the navigation task. Although constructing an environment depends on specific tasks, it consists of two main functions: reset and step. The reset function sets the agents to their starting locations at beginning of each episode while the step function moves the agents to new locations and returns a new state, reward, and task status (task finished or not) after they made decisions.
 
@@ -395,10 +400,10 @@ plt.show()
 ```
 
 
-![png](output_40_0.png)
+![png](./images/output_40_0.png)
 
 
-#Using SpeedyIBL for Insider Attack Game
+# Using SpeedyIBL for Insider Attack Game
 
 In this game, players take the role of the attacker and their goal is to score points by “hacking” computers to steal proprietary data.
 
@@ -581,10 +586,10 @@ plt.show()
 ```
 
 
-![png](output_44_0.png)
+![png](./images/output_44_0.png)
 
 
-#Using SpeedyIBL for Minimap
+# Using SpeedyIBL for Minimap
 
 ### Task description
 
@@ -678,10 +683,10 @@ plt.show()
 ```
 
 
-![png](output_51_0.png)
+![png](./images/output_51_0.png)
 
 
-#SpeedyIBL for for Tasks from GymAI
+# SpeedyIBL for for Tasks from GymAI
 
 Install and call the CartPole Task
 
@@ -770,10 +775,10 @@ plt.show()
 ```
 
 
-![png](output_58_0.png)
+![png](./images/output_58_0.png)
 
 
-#Reproducing Results
+# Reproducing Results
 
 All the results can be reproduced by running corresponding scripts for each task under folder **Codes**. In particular, to run the tasks with SpeedyIBL and PyIBL simply execute the following commands and the experiment will start.
 
