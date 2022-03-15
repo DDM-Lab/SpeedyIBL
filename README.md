@@ -19,7 +19,7 @@ In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial o
 
 <b id="f2">[2]</b> Thuy Ngoc Nguyen, Duy Nhat Phan, Cleotilde Gonzalez (2021), [SpeedyIBL: A Solution to the Curse of Exponential Growth in Instance-Based Learning Models of Decisions from Experience](https://pypi.org/project/speedyibl/)
 
-##**Installing SpeedyIBL**
+## **Installing SpeedyIBL**
 
 Note that the speedyibl library is a Python module, which is stored at PyPI (pypi.org), a repository of software for the Python programming language, see https://pypi.org/project/speedyibl/. Hence, installing SpeedyIBL is a very simple process. Indeed, one can install SpeedyIBL by simply typing at the command line:
 
@@ -71,7 +71,7 @@ instances            | no input                  | show all the instances in the
 
 ```
 
-#Using SpeedyIBL for binary choice task
+# Using SpeedyIBL for binary choice task
 
 From the list of inputs of the class Agent, although we need 5 inputs to create an IBL agent, by using the defaults for noise, decay, mismatchPenalty, and lendeque, we only need to pass the default_utility = 4.4. Hence we create an IBL agent for the binary choice task as follows:
 
