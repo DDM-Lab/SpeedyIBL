@@ -5,7 +5,7 @@
 In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial on how to install and use the SpeedyIBL library. Specifically, we explain how to build an IBL agent, and elaborate on the meaning of associated inputs and functions. Afterwards, we present worked examples on two illustrative tasks:  Binary Choice and Navigation. It is worth noting that all the codes to run all the tasks and to replicate the results presented in the paper are available at https://github.com/DDM-Lab/SpeedyIBL. Finally, for the reproducibility purpose, we give an example on how to reproduce all the reported results using PyIBL and SpeedyIBL. In addition, we provide a Jupyter notebook file of the turorial, see https://github.com/DDM-Lab/SpeedyIBL/blob/main/tutorial_speedyibl.ipynb, for running the aforementioned tasks using SpeedyIBL. We also can run this file on Google Colab https://colab.research.google.com/github/nhatpd/SpeedyIBL/blob/main/speedyIBL.ipynb without installing Python on personal computers. 
 
 
-* [**Installing SpeedyIBL**](#Installation-of-speedy-IBL)
+* [**Installing SpeedyIBL**](#Installing-SpeedyIBL)
 * [**Illustration of IBL for Binary Choice Task**](#Illustration-of-IBL-for-Binary-Choice-Task)
 * [**Illustration of IBL for Insider Attack Game**](#Illustration-of-IBL-for-Insider-Attack-Game)
 * [**Build an IBL Agent with an Equal Delay Feedback Mechanism**](#Build-an-IBL-Agent-with-an-Equal-Delay-Feedback-Mechanism)
@@ -19,7 +19,7 @@ In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial o
 
 <b id="f2">[2]</b> Thuy Ngoc Nguyen, Duy Nhat Phan, Cleotilde Gonzalez (2021), [SpeedyIBL: A Solution to the Curse of Exponential Growth in Instance-Based Learning Models of Decisions from Experience](https://pypi.org/project/speedyibl/)
 
-##Installing SpeedyIBL
+##**Installing SpeedyIBL**
 Note that the speedyibl library is a Python module, which is stored at PyPI (pypi.org), a repository of software for the Python programming language, see https://pypi.org/project/speedyibl/. Hence, installing SpeedyIBL is a very simple process. Indeed, one can install SpeedyIBL by simply typing at the command line:
 
 
