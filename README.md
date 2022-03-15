@@ -9,7 +9,7 @@ In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial o
 * [**Importing and describing the class Agent of SpeedyIBL**](#Importing-and-describing-the-class-Agent-of-SpeedyIBL)
 * [**Using SpeedyIBL for binary choice task**](#Using-SpeedyIBL-for-binary-choice-task)
 * [**Using SpeedyIBL for Cooperative Navigation task**](#Using-SpeedyIBL-for-Cooperative-Navigation-task)
-* [**Using SpeedyIBL for Insider Attack Game**](#Using SpeedyIBL-for-Insider-Attack-Game)
+* [**Using SpeedyIBL for Insider Attack Game**](#Using-SpeedyIBL-for-Insider-Attack-Game)
 * [**Using SpeedyIBL for Minimap**](#Using-SpeedyIBL-for-Minimap)
 * [**SpeedyIBL for for Tasks from GymAI**](#SpeedyIBL-for-for-Tasks-from-GymAI)
 * [**Reproducing Results**](#Reproducing-Results)
