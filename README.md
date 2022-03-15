@@ -1,11 +1,12 @@
 <a href="https://colab.research.google.com/github/nhatpd/SpeedyIBL/blob/main/tutorial_speedyibl.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-#Tutorial of SpeedyIBL based on Instance Based Learning Theory (IBLT)
+# Tutorial of SpeedyIBL based on Instance Based Learning Theory (IBLT)
 
 In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial on how to install and use the SpeedyIBL library. Specifically, we explain how to build an IBL agent, and elaborate on the meaning of associated inputs and functions. Afterwards, we present worked examples on two illustrative tasks:  Binary Choice and Navigation. It is worth noting that all the codes to run all the tasks and to replicate the results presented in the paper are available at https://github.com/DDM-Lab/SpeedyIBL. Finally, for the reproducibility purpose, we give an example on how to reproduce all the reported results using PyIBL and SpeedyIBL. In addition, we provide a Jupyter notebook file of the turorial, see https://github.com/DDM-Lab/SpeedyIBL/blob/main/tutorial_speedyibl.ipynb, for running the aforementioned tasks using SpeedyIBL. We also can run this file on Google Colab https://colab.research.google.com/github/nhatpd/SpeedyIBL/blob/main/speedyIBL.ipynb without installing Python on personal computers. 
 
 
 * [**Installing SpeedyIBL**](#Installing-SpeedyIBL)
+* [**Importing and describing the class Agent of SpeedyIBL**](#Importing-and-describing-the-class-Agent-of-SpeedyIBL)
 * [**Illustration of IBL for Binary Choice Task**](#Illustration-of-IBL-for-Binary-Choice-Task)
 * [**Illustration of IBL for Insider Attack Game**](#Illustration-of-IBL-for-Insider-Attack-Game)
 * [**Build an IBL Agent with an Equal Delay Feedback Mechanism**](#Build-an-IBL-Agent-with-an-Equal-Delay-Feedback-Mechanism)
@@ -36,7 +37,7 @@ Note that the speedyibl library is a Python module, which is stored at PyPI (pyp
     Requirement already satisfied: wheel in /usr/local/lib/python3.7/dist-packages (from speedyibl) (0.37.1)
 
 
-#Importing and describing the class Agent of SpeedyIBL
+# Importing and describing the class Agent of SpeedyIBL
 
 After installing the library, we need to import the class Agent of SpeedyIBL by typing:
 
