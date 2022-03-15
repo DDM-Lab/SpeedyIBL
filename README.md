@@ -7,7 +7,7 @@ In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial o
 
 * [**Installing SpeedyIBL**](#Installing-SpeedyIBL)
 * [**Importing and describing the class Agent of SpeedyIBL**](#Importing-and-describing-the-class-Agent-of-SpeedyIBL)
-* [**Illustration of IBL for Binary Choice Task**](#Illustration-of-IBL-for-Binary-Choice-Task)
+* [**Using SpeedyIBL for binary choice task**](#Illustration-of-IBL-for-Binary-Choice-Task)
 * [**Illustration of IBL for Insider Attack Game**](#Illustration-of-IBL-for-Insider-Attack-Game)
 * [**Build an IBL Agent with an Equal Delay Feedback Mechanism**](#Build-an-IBL-Agent-with-an-Equal-Delay-Feedback-Mechanism)
 * [**Illustration of IBL for Cooperative Navigation**](#Illustration-of-IBL-for-Cooperative-Navigation)
