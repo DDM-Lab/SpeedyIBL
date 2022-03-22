@@ -782,41 +782,41 @@ plt.show()
 
 All the results can be reproduced by running corresponding scripts for each task under folder **Codes**. In particular, to run the tasks with SpeedyIBL and PyIBL simply execute the following commands and the experiment will start.
 
-##Binary Choice Task
+## Binary Choice Task
 ```markdown
 python3 binarychoice.py --method [name]
 ```
 
 With argument [name] is replaced by: libl for SpeedyIBL and ibl for PyIBL.
 
-##Insider Attack Game
+## Insider Attack Game
 ```markdown
 python3 insider_attack_speedyIBL.py # to run SpeedyIBL
 python3 insider.py # to run PyIBL
 ```
 
-##Minimap
+## Minimap
 ```markdown
 python3 minimap.py --type [name]
 ```
 
 With argument [name] is replaced by: libl for SpeedyIBL and ibl for PyIBL. 
 
-##MisPac-man
+## MisPac-man
 ```markdown
 python3 mispacman.py --type [name]
 ```
 
 With argument [name] is replaced by: libl for SpeedyIBL and ibl for PyIBL. 
 
-##Fireman
+## Fireman
 ```markdown
 python3 fireman.py --type [name]
 ```
 
 With argument [name] is replaced by: libl for SpeedyIBL and ibl for PyIBL. 
 
-##Cooperative Navigation
+## Cooperative Navigation
 ```markdown
 python3 navigation.py --type [name]
 ```
