@@ -17,7 +17,7 @@ In an attempt to increase the usage of SpeedyIBL, we hereby provide a tutorial o
 ## References
 <b id="f1">[1]</b> Cleotilde Gonzalez, Javier F. Lerch and Christian Lebiere (2003), [Instance-based learning in dynamic decision making](https://www.sciencedirect.com/science/article/abs/pii/S0364021303000314), Cognitive Science, 27, 591-635. DOI: 10.1016/S0364-0213(03)00031-4.
 
-<b id="f2">[2]</b> Thuy Ngoc Nguyen, Duy Nhat Phan, Cleotilde Gonzalez (2021), [SpeedyIBL: A Solution to the Curse of Exponential Growth in Instance-Based Learning Models of Decisions from Experience](https://arxiv.org/abs/2111.10268)
+<b id="f2">[2]</b> Thuy Ngoc Nguyen, Duy Nhat Phan, Cleotilde Gonzalez (2021), [SpeedyIBL: A Comprehensive, Precise, and Fast Implementation of Instance-Based Learning Theory](https://arxiv.org/abs/2111.10268)
 
 ## **Installing SpeedyIBL**
 
