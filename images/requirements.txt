@@ -1,5 +1,5 @@
 numpy==1.21.2
-opencv-python==4.5.3.56
+opencv-python==4.8.1.78
 ordered-set==4.0.2
 prettytable==2.2.0
 pyactup==1.1.4
